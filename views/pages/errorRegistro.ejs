@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <base href="/">
+	<link rel="stylesheet" href="./styles.css" />
+  <title>Provisiones Stan</title>
+</head>
+
+
+<body onload="redirect()">
+	<header class="nav-container">
+		<%- include('../partials/navbar')%>
+	</header>
+
+	<div class="flex-center">
+		<span>Error de registro</span>
+		<span>
+			Redirigiendo en <span id="time">10</span> segundos
+		</span>
+		<div role="status">
+			<span>Loading...</span>
+		</div>
+	</div>
+	<div>
+		<a href="/registro">
+			<button class="btn-enviar">Intentar registrarse</button>
+		</a>
+	</div>
+
+	<div ><%- include('../partials/footer')%></div>
+
+	<script>
+		function redirect() {
+			setInterval(() => {
+				let a = parseInt(document.getElementById("time").innerText)
+				if (a > 0) {
+					a -= 1
+					document.getElementById("time").innerText = a
+				} else {
+					clearInterval()
+					location.href = "/login"
+				}
+			}, 1000)
+		}
+	</script>
+</body>
+
+</html>

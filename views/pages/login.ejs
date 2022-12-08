@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Provisiones Stan</title>
+</head>
+
+<body>
+  <header class="nav-container"><%- include('../partials/navbar')%></header>
+
+  <div class="flex-center">
+    <h1> Bienvenidx! Ingresa con tu cuenta</h1>
+    <form action="" method="post">
+      <div id="login-div">
+        <input type="text" id="username" name="username" value="" placeholder="Username"/>
+        <input type="password" id="password" name="password" value="" placeholder="Password"/>
+      </div>
+      <div>
+        <button type="submit" id="login-btn" class="btn-enviar">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+	<div>
+		<p>Si no tenes cuenta, registrate:</p>
+		<button onclick="location.href='/registro'" id="login-btn" class="btn-enviar">
+			Crear cuenta
+		</button>
+	</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/login.js"></script>
+  <div ><%- include('../partials/footer')%></div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css"/>
+  <title>Provisiones Stan</title>
+</head>
+
+<body>
+  <header class="nav-container"><%- include('../partials/navbar')%></header>
+  <div class="flex-center">
+    <div>
+      <h2>Datos del proceso</h2>
+    </div>
+		<div class="info-container">
+			<table>
+				<tr>
+					<th>Argumentos</th>
+					<td><%= argumentos %></td>
+				</tr>
+				<tr>
+					<th>Directorio del proyecto</th>
+					<td><%= directorioActual %></td>
+				</tr>
+				<tr>
+					<th>Process ID</th>
+					<td><%= idProceso %></td>
+				</tr>
+				<tr>
+					<th>Version node</th>
+					<td><%= vNode %></td>
+				</tr>
+				<tr>
+					<th>Ruta del ejecutable</th>
+					<td><%= rutaEjecutable %></td>
+				</tr>
+				<tr>
+					<th>Sistema operativo</th>
+					<td><%= sistemaOperativo %></td>
+				</tr>
+				<tr>
+					<th>Uso de memoria</th>
+					<td><%= memoria %></td>
+				</tr>
+				<tr>
+					<th>N° de procesadores</th>
+					<td><%= processNum %></td>
+				</tr>
+			</table>	
+		</div>
+  </div>
+</body>
+</html>

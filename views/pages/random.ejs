@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Google Font -->	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<base href="/">
+  <link rel="stylesheet" href="./styles.css"/>
+  <title>Provisiones Stan</title>	
+</head>
+
+<body>
+  <div class="container">
+
+    <main>
+
+      <div class="jumbotron">
+        <form method="POST" action="/api/randoms">
+          <h2 class="fw-bold mb-2 text-uppercase">Obtener numeros randoms sin bloquear el servidor - Fork</h2>
+
+          <p>Bucle: </p>
+          <div class="form-group">
+            <input type="number" id="typeEmailX" max="500000000" name="cantBucle"
+              class="form-control form-control-lg" />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Generar</button>
+        </form>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+    document.querySelector('form').onsubmit = function () {
+      this.setAttribute('action', "/api/randoms?cant=" + document.querySelector('input[name=cantBucle]').value)
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+	<!-- Google Font -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<base href="/">
+  <link rel="stylesheet" href="./styles.css"/>
+  <title>Provisiones Stan</title>
+</head>
+
+<body>
+	<header class="nav-container"><%- include('../partials/navbar')%></header>
+	
+  <div class="flex-center">
+    <div>
+      <form method="POST" action="/api/random">
+        <h2>Generador de números random sin bloque de servidor [Fork]</h2>
+        <p>Bucle:</p>
+        <div class="form-group">
+            <input type="number" max="500000000" name="cantidad" class="form-control form-control-lg" />
+        </div>
+        <button class="btn-enviar" type="submit">Generar</button>
+      </form>
+    </div>
+  </div>
+
+	<div><%- include('../partials/footer')%></div>
+  <script>
+    document.querySelector('form').onsubmit = function () {
+      this.setAttribute('action', "/api/random?cant=" + document.querySelector('input[name=cantidad]').value)
+    }
+  </script>
+</body>
+
+</html> -->

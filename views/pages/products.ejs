@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <base href="/">
+		<link rel="stylesheet" href="./styles.css" />
+    <title>Provisiones Stan</title>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+  </head>
+
+  <body>
+    <header class="nav-container"><%- include('../partials/navbar')%></header>
+    <div>
+      <h2>LISTADO DE PRODUCTOS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Creador</th>
+          </tr>
+        </thead>
+        <tbody id="productsTable">
+          <% if (productsExist) { %> 
+            <% products.forEach((element) => { %>
+          <tr>
+            <th scope="row"><%=element.id%></th>
+            <td style="text-transform: uppercase"><%=element.name%></td>
+            <td><%=element.price%></td>
+            <td>
+              <img src="<%=element.thumbnail%>" class="w-50" alt="..." />
+            </td>
+          </tr>
+            <%})%> 
+          <% }%>
+        </tbody>
+      </table>
+    </div>
+
+    <div ><%- include('../partials/footer')%></div>
+  </body>
+</html>
